@@ -230,7 +230,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Helper text tetap dipertahankan */
         .helper-text {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -266,10 +265,11 @@
             background-color: #1a1a1a;
         }
 
+        /* Perbaikan kode SVG Select untuk membuang dolar bocor yang disebabkan "%24" -> "%20" */
         select {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%238b92a5%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238b92a5%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
             background-repeat: no-repeat;
             background-position: right 18px center;
             background-size: 16px;
@@ -279,12 +279,11 @@
         /* --- SYMMETRICAL COMBO BOX 50:50 --- */
         .combo-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Murni 50:50 */
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
             width: 100%;
         }
 
-        /* Menyamakan tinggi Select dan Input Button secara presisi */
         .combo-wrapper select,
         .combo-wrapper button.input-trigger {
             height: 56px; 
@@ -292,7 +291,6 @@
             width: 100%;
         }
 
-        /* Style Button untuk membuka modal input manual */
         .input-trigger {
             cursor: pointer;
             text-align: center;
@@ -324,7 +322,7 @@
             box-shadow: 0 0 10px rgba(255, 87, 34, 0.15);
         }
 
-        /* --- COLLAPSIBLE OUTPUT PANEL (Lipat/Buka) --- */
+        /* --- COLLAPSIBLE OUTPUT PANEL --- */
         .output-panel {
             background: var(--surface-color);
             border-radius: var(--radius-card);
@@ -361,18 +359,16 @@
             color: var(--accent-green);
         }
         
-        /* State Terbuka */
         .output-panel:not(.closed) .toggle-icon {
             transform: rotate(180deg);
         }
 
         .output-body {
-            max-height: 2000px; /* Cukup besar untuk nampung teks */
+            max-height: 2000px;
             transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow: hidden;
         }
         
-        /* State Tertutup */
         .output-panel.closed .output-body {
             max-height: 0;
         }
@@ -390,14 +386,14 @@
             font-size: 0.95rem;
             color: #d1d5db;
             white-space: pre-wrap;
-            line-height: 1.8;
+            line-height: 1.5; /* Line-height direndahkan agar secara visual lebih rapat */
         }
 
-        /* --- MODAL DIALOG EKSTRA LUAS --- */
+        /* --- MODAL DIALOG --- */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); /* Deep dark overlay */
+            background: rgba(0, 0, 0, 0.85); 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 2000;
@@ -417,7 +413,7 @@
         .modal-card {
             background: #111111;
             width: 90%;
-            max-width: 800px; /* Lebih lebar sesuai permintaan */
+            max-width: 800px;
             border-radius: var(--radius-card);
             padding: 40px;
             box-shadow: 0 30px 80px rgba(0,0,0,0.9);
@@ -463,7 +459,7 @@
         }
 
         .modal-card textarea {
-            min-height: 220px; /* Luas untuk mengetik manual */
+            min-height: 220px;
             margin-bottom: 30px;
             font-size: 1.05rem;
             border-color: rgba(255,255,255,0.15);
@@ -515,7 +511,6 @@
 </head>
 <body>
 
-    <!-- Navigasi Atas -->
     <div class="sticky-ribbon">
         <div class="ribbon-title">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -527,24 +522,20 @@
         </div>
     </div>
 
-    <!-- Header -->
     <div class="header">
         <h1>Builder <span>Infografis</span></h1>
         <p>Lengkapi parameter desain. Output otomatis tergenerate di panel bawah (lipat/buka).</p>
     </div>
 
     <div class="container">
-        <!-- FORM PANEL -->
         <div id="mainForm" style="display:flex; flex-direction: column; gap: 35px;">
             
-            <!-- SECTION 1 -->
             <div class="form-section">
                 <h3 class="section-title">📋 1. Informasi Dasar</h3>
                 <div class="form-grid">
                     <div class="form-group">
                         <label>1. Jenis Desain</label>
                         <div class="combo-wrapper">
-                            <!-- Minimal 6 Pilihan -->
                             <select id="q1" onchange="clearComboInput('q1_other')">
                                 <option value="">-- Pilih Jenis --</option>
                                 <option value="Infografis Edukasi">Infografis Edukasi</option>
@@ -620,7 +611,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 2 -->
             <div class="form-section">
                 <h3 class="section-title">🎨 2. Visual Direction</h3>
                 <div class="form-grid">
@@ -688,7 +678,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 3 -->
             <div class="form-section">
                 <h3 class="section-title">📝 3. Struktur Konten</h3>
                 <div class="form-grid">
@@ -735,7 +724,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 4 -->
             <div class="form-section">
                 <h3 class="section-title">🖼️ 4. Elemen Visual</h3>
                 <div class="form-grid">
@@ -772,7 +760,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 5 -->
             <div class="form-section">
                 <h3 class="section-title">☪️ 5. Aturan Visual Syariah</h3>
                 <div class="form-grid">
@@ -806,7 +793,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 6 -->
             <div class="form-section">
                 <h3 class="section-title">⚙️ 6. Teknis Desain</h3>
                 <div class="form-grid">
@@ -849,15 +835,12 @@
 
         </div>
 
-        <!-- COLLAPSIBLE OUTPUT PANEL -->
-        <!-- Secara default diberikan class 'closed' agar terlipat dan tidak memanjang ke bawah -->
         <div class="output-panel closed" id="outputSection">
             <div class="output-header" onclick="toggleOutput()">
                 <h2>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     Lihat Hasil Prompt
                 </h2>
-                <!-- Icon panah yang berputar saat dibuka -->
                 <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             
@@ -869,7 +852,6 @@
         </div>
     </div>
 
-    <!-- MODAL DIALOG INPUT KUSTOM -->
     <div class="modal-overlay" id="customInputModal">
         <div class="modal-card">
             <div class="modal-header">
@@ -888,7 +870,6 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toastMsg">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
         Teks berhasil disalin!
@@ -983,7 +964,6 @@
 
         // Membersihkan custom input jika user memilih opsi default di Dropdown
         function clearComboInput(dummy_param) {
-            // Kita cari elemen dropdown yang memicu event
             const activeElem = document.activeElement;
             if(activeElem && activeElem.tagName === 'SELECT') {
                 const key = activeElem.id;
@@ -1003,9 +983,12 @@
             panel.classList.toggle('closed');
         }
 
-        // FUNGSI GENERATE
+        // FUNGSI GENERATE (Modifikasi output sesuai permintaan)
         function generateOutput() {
-            let outputText = '🎨 Spesifikasi Prompt Infografis AI\n=========================================\n\n';
+            let outputText = '🎨 Spesifikasi Prompt Infografis AI\n';
+            outputText += 'Gunakan Form dibawah ini, Sebagai Acuan Untuk Menghasilkan Key, Pembuataan Blue Print Selanjutnya\n';
+            outputText += '=========================================\n';
+            
             let hasInput = false;
             let isiUtamaText = '';
 
@@ -1021,7 +1004,6 @@
 
                 let finalValue = element.value.trim();
 
-                // Cek jika ini tipe Combo, periksa apakah ada data manual tersimpan
                 if (q.isCombo) {
                     if (customInputsData[q.id]) {
                         finalValue = customInputsData[q.id];
@@ -1034,20 +1016,24 @@
                     hasInput = true;
                 }
 
+                // Spacing diatur rapat (hanya 1 enter \n)
                 outputText += `- ${q.label}: ${finalValue}\n`;
             });
 
-            outputText += '\n=========================================\n';
+            outputText += '=========================================\n';
             outputText += '📄 ISI UTAMA (BODY CONTENT)\n';
             outputText += '-----------------------------------------\n';
             
             if (isiUtamaText !== '') {
-                isiUtamaText = isiUtamaText.replace(/\n{2,}/g, '\n');
+                // Membersihkan jarak multiline agar padat saat disalin
+                isiUtamaText = isiUtamaText.replace(/\n+/g, '\n');
                 outputText += isiUtamaText + '\n';
             } else {
                 outputText += '(kosong)\n';
             }
-            outputText += '=========================================';
+            
+            outputText += '=========================================\n';
+            outputText += 'Catatan : jangan menciptakan gambar apapun, tanpa diminta, gunakan ini hanya sebagai key acuan.';
 
             const outputDiv = document.getElementById('outputResult');
             if (hasInput) {
