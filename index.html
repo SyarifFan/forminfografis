@@ -9,8 +9,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
         :root {
+            /* Palet Warna Sesuai Permintaan */
             --bg-color: #000000;       
-            --surface-color: #0d0d0d;  
+            --surface-color: #0a0a0a;  
             --input-bg: #141414;       
             
             --primary: #FF5722;        
@@ -21,16 +22,16 @@
 
             --text-main: #ffffff;
             --text-muted: #8b92a5;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --border-color: rgba(255, 255, 255, 0.12);
 
-            --radius-card: 28px; 
-            --radius-input: 16px;
-            --radius-btn: 50px; 
+            --radius-card: 20px; 
+            --radius-input: 12px;
+            --radius-btn: 30px; 
             
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
             
-            --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.8);
-            --shadow-glow: 0 0 15px rgba(3, 174, 210, 0.2);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 10px rgba(3, 174, 210, 0.25);
         }
 
         * {
@@ -42,13 +43,13 @@
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--secondary-blue); }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -60,10 +61,10 @@
         .sticky-ribbon {
             position: sticky;
             top: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -73,82 +74,69 @@
 
         .ribbon-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         
         .ribbon-title span { color: var(--primary); }
 
         .output-actions {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 12px 28px;
+            padding: 10px 20px;
             border: none;
             border-radius: var(--radius-btn);
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-primary { background-color: var(--primary); color: white; }
-        .btn-primary:hover { 
-            background-color: #ff6e40; transform: translateY(-2px); 
-            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
-        }
+        .btn-primary:hover { background-color: #e64a19; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3); }
         
-        .btn-secondary { 
-            background-color: rgba(3, 174, 210, 0.1); 
-            color: var(--secondary-blue); border: 1px solid rgba(3, 174, 210, 0.3);
-        }
-        .btn-secondary:hover { 
-            background-color: var(--secondary-blue); color: white;
-            box-shadow: 0 6px 20px rgba(3, 174, 210, 0.3);
-        }
+        .btn-secondary { background-color: transparent; color: var(--secondary-blue); border: 1px solid var(--secondary-blue); }
+        .btn-secondary:hover { background-color: var(--secondary-blue); color: white; }
+
+        .btn-action { background-color: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-action:hover { background-color: rgba(255, 255, 255, 0.2); }
 
         /* Header Area */
-        .header { text-align: center; padding: 50px 20px 40px; }
-        .header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px;
-        }
+        .header { text-align: center; padding: 40px 20px 30px; }
+        .header h1 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
         .header h1 span { color: var(--secondary-blue); }
-        .header p { color: var(--text-muted); font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+        .header p { color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
 
         /* Main Container */
         .container {
-            display: flex; flex-direction: column; gap: 35px;
-            max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%;
+            display: flex; flex-direction: column; gap: 24px;
+            max-width: 1000px; margin: 0 auto; padding: 0 20px; width: 100%;
         }
 
-        /* Cards */
+        /* Cards (More Compact) */
         .form-section {
-            background: var(--surface-color); padding: 40px;
+            background: var(--surface-color); padding: 25px 30px;
             border-radius: var(--radius-card); box-shadow: var(--shadow-card);
-            position: relative; transition: transform 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-section:hover {
-            transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.15);
+            position: relative; border: 1px solid var(--border-color);
         }
 
         .form-section::before {
             content: ''; position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            border-radius: var(--radius-card) var(--radius-card) 0 0; opacity: 0.8;
+            top: 0; left: 0; width: 100%; height: 4px;
+            border-radius: var(--radius-card) var(--radius-card) 0 0;
         }
         .form-section:nth-child(1)::before { background: var(--secondary-blue); }
         .form-section:nth-child(2)::before { background: var(--primary); }
@@ -160,209 +148,150 @@
 
         .section-title {
             color: var(--text-main); font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem; font-weight: 700; margin-bottom: 25px;
-            display: flex; align-items: center; gap: 12px;
+            font-size: 1.1rem; font-weight: 700; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
         }
 
         /* Grid System */
-        .form-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px 35px;
-        }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 24px; }
         .full-width { grid-column: 1 / -1; }
 
         /* Inputs & Labels */
-        .form-group {
-            display: flex; flex-direction: column; width: 100%; position: relative;
-            height: 100%;
-        }
-
-        /* Memaksa input/dropdown selalu sejajar di bawah */
-        .form-group > label:first-child {
-            margin-bottom: auto; 
-            padding-bottom: 4px;
-        }
+        .form-group { display: flex; flex-direction: column; width: 100%; position: relative; height: 100%; }
+        .form-group > label:first-child { margin-bottom: 6px; }
 
         label {
-            font-weight: 700; color: var(--text-main); font-size: 0.95rem;
-            margin-bottom: 8px; letter-spacing: 0.3px;
-            display: flex; align-items: flex-start;
-            line-height: 1.4;
+            font-weight: 600; color: #e0e0e0; font-size: 0.85rem;
+            display: flex; align-items: center; line-height: 1.3;
         }
 
-        /* Tooltip Info Icon replacing Helper Text */
         .info-icon {
             display: inline-flex; align-items: center; justify-content: center;
-            margin-left: 8px; color: var(--text-muted); cursor: pointer;
-            position: relative; transition: var(--transition);
-            margin-top: 2px;
+            margin-left: 6px; color: var(--text-muted); cursor: pointer; position: relative;
         }
-        .info-icon svg { width: 16px; height: 16px; }
+        .info-icon svg { width: 14px; height: 14px; }
         .info-icon:hover, .info-icon.active { color: var(--secondary-blue); }
         
         .info-tooltip {
-            position: absolute; bottom: calc(100% + 12px); left: 50%;
-            transform: translateX(-50%); background: #1f1f1f; color: #fff;
-            padding: 12px 16px; border-radius: 12px; font-size: 0.85rem; font-weight: 500;
-            width: max-content; max-width: 280px; box-shadow: 0 10px 25px rgba(0,0,0,0.9);
-            border: 1px solid rgba(255,255,255,0.15); z-index: 100;
-            opacity: 0; visibility: hidden; transition: all 0.2s ease;
-            line-height: 1.5; text-transform: none; white-space: normal;
+            position: absolute; bottom: calc(100% + 10px); left: 50%;
+            transform: translateX(-50%); background: #222; color: #fff;
+            padding: 10px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 500;
+            width: max-content; max-width: 250px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            border: 1px solid #444; z-index: 100;
+            opacity: 0; visibility: hidden; transition: all 0.2s ease; line-height: 1.4;
         }
         .info-tooltip::after {
-            content: ''; position: absolute; top: 100%; left: 50%; margin-left: -6px;
-            border-width: 6px; border-style: solid; border-color: #1f1f1f transparent transparent transparent;
+            content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px;
+            border-width: 5px; border-style: solid; border-color: #222 transparent transparent transparent;
         }
-        .info-icon:hover .info-tooltip, .info-icon.active .info-tooltip {
-            opacity: 1; visibility: visible; bottom: calc(100% + 8px);
-        }
+        .info-icon:hover .info-tooltip, .info-icon.active .info-tooltip { opacity: 1; visibility: visible; }
 
         input[type="text"], input[type="number"], select, textarea {
-            width: 100%; padding: 16px 20px; background-color: var(--input-bg);
+            width: 100%; padding: 12px 14px; background-color: var(--input-bg);
             border: 1px solid var(--border-color); color: var(--text-main);
-            border-radius: var(--radius-input); font-size: 0.95rem;
-            font-weight: 500; transition: var(--transition);
+            border-radius: var(--radius-input); font-size: 0.9rem;
+            transition: var(--transition);
         }
-
-        textarea { resize: vertical; min-height: 120px; }
-
+        textarea { resize: vertical; min-height: 80px; }
         input:focus, select:focus, textarea:focus {
             outline: none; border-color: var(--secondary-blue);
             box-shadow: var(--shadow-glow); background-color: #1a1a1a;
         }
 
-        /* SVG Select Fix (Chevron icon Base64 clean) */
         select {
             cursor: pointer; appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b92a5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: right 18px center;
-            background-size: 16px; padding-right: 45px;
+            background-repeat: no-repeat; background-position: right 14px center;
+            background-size: 14px; padding-right: 35px;
         }
 
-        /* Checkbox minimalis */
         input[type="checkbox"].custom-cb {
-            appearance: auto; width: 18px; height: 18px; accent-color: var(--primary);
-            cursor: pointer; margin: 0; padding: 0; background-color: transparent; border: none;
+            appearance: auto; width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer;
         }
 
-        /* --- SYMMETRICAL COMBO BOX 50:50 --- */
-        .combo-wrapper {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%;
-        }
-
-        .combo-wrapper select, .combo-wrapper button.input-trigger {
-            height: 56px; margin: 0; width: 100%;
-        }
-
+        /* COMBO BOX COMPACT (Select + Button Sejajar) */
+        .combo-wrapper { display: flex; gap: 10px; width: 100%; align-items: stretch; }
+        .combo-wrapper select { flex: 1; min-width: 0; }
+        
         .input-trigger {
+            flex-shrink: 0; width: 110px;
             cursor: pointer; text-align: center; color: var(--secondary-blue);
             border: 1px dashed rgba(3, 174, 210, 0.4); background-color: rgba(3, 174, 210, 0.05);
-            border-radius: var(--radius-input); font-size: 0.95rem; font-weight: 600;
-            transition: var(--transition); display: flex; align-items: center;
-            justify-content: center; overflow: hidden; text-overflow: ellipsis;
-            white-space: nowrap; padding: 0 15px;
+            border-radius: var(--radius-input); font-size: 0.8rem; font-weight: 600;
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
         }
-        
-        .input-trigger:hover {
-            background-color: rgba(3, 174, 210, 0.1); border-color: var(--secondary-blue);
-        }
-        
+        .input-trigger:hover { background-color: rgba(3, 174, 210, 0.1); border-color: var(--secondary-blue); }
         .input-trigger.has-value {
             color: var(--text-main); border: 1px solid var(--primary);
-            background-color: rgba(255, 87, 34, 0.1); box-shadow: 0 0 10px rgba(255, 87, 34, 0.15);
+            background-color: rgba(255, 87, 34, 0.15);
         }
 
-        /* --- COLLAPSIBLE OUTPUT PANEL --- */
+        /* OUTPUT PANEL (Single Shape, Clean Look) */
         .output-panel {
-            background: var(--surface-color); border-radius: var(--radius-card);
-            border: 1px solid var(--accent-green); overflow: hidden;
-            margin-top: 10px; transition: var(--transition);
+            background: #111111; border-radius: var(--radius-card);
+            border: 1px solid var(--border-color); border-top: 4px solid var(--accent-green);
+            overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-card);
+            margin-top: 10px;
         }
 
         .output-header {
-            padding: 25px 35px; display: flex; justify-content: space-between;
-            align-items: center; cursor: pointer; background: rgba(72, 161, 17, 0.08);
-            transition: background 0.3s;
+            padding: 20px 25px; display: flex; justify-content: space-between;
+            align-items: center; cursor: pointer; background: transparent;
         }
-
-        .output-header:hover { background: rgba(72, 161, 17, 0.15); }
-
+        .output-header:hover { background: rgba(255,255,255,0.02); }
         .output-header h2 {
-            color: var(--accent-green); font-size: 1.2rem; font-family: 'Poppins', sans-serif;
-            display: flex; align-items: center; gap: 12px; margin: 0;
+            color: var(--accent-green); font-size: 1.1rem; font-family: 'Poppins', sans-serif;
+            display: flex; align-items: center; gap: 10px; margin: 0;
         }
 
-        .toggle-icon { transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); color: var(--accent-green); }
+        .toggle-icon { transition: transform 0.3s; color: var(--accent-green); }
         .output-panel:not(.closed) .toggle-icon { transform: rotate(180deg); }
 
-        .output-body {
-            max-height: 2500px; transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden;
-        }
+        .output-body { max-height: 2500px; transition: max-height 0.4s ease-in-out; overflow: hidden; }
         .output-panel.closed .output-body { max-height: 0; }
-        .output-content { padding: 0 35px 35px 35px; }
-
+        
+        .code-container { padding: 0 25px 25px 25px; }
         .code-box {
-            background: var(--input-bg); padding: 30px; border-radius: var(--radius-input);
-            border: 1px solid var(--border-color); font-family: 'Courier New', Courier, monospace;
-            font-size: 0.95rem; color: #d1d5db; white-space: pre-wrap; line-height: 1.5; 
+            background: #050505; padding: 20px; border-radius: 8px;
+            border: 1px solid #222; font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.85rem; color: #a1e289; white-space: pre-wrap; line-height: 1.5; 
         }
 
-        /* --- MODAL DIALOG --- */
+        /* MODAL */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px); z-index: 2000;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); z-index: 2000;
             display: flex; justify-content: center; align-items: center;
-            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s;
         }
-
         .modal-overlay.active { opacity: 1; visibility: visible; }
-
         .modal-card {
-            background: #111111; width: 90%; max-width: 800px;
-            border-radius: var(--radius-card); padding: 40px;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.9); transform: translateY(30px) scale(0.95);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); border: 1px solid var(--border-color);
+            background: var(--surface-color); width: 90%; max-width: 600px;
+            border-radius: var(--radius-card); padding: 30px;
+            transform: translateY(20px); transition: transform 0.3s; border: 1px solid var(--border-color);
         }
+        .modal-overlay.active .modal-card { transform: translateY(0); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .modal-header h3 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; }
+        .modal-card textarea { min-height: 150px; margin-bottom: 20px; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
 
-        .modal-overlay.active .modal-card { transform: translateY(0) scale(1); }
-
-        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .modal-header h3 { font-family: 'Poppins', sans-serif; color: var(--text-main); font-size: 1.5rem; font-weight: 700; }
-
-        .modal-close {
-            background: transparent; border: 1px solid var(--border-color);
-            color: var(--text-muted); cursor: pointer; width: 40px; height: 40px;
-            border-radius: 50%; display: flex; justify-content: center; align-items: center;
-            transition: var(--transition);
-        }
-        .modal-close:hover { 
-            background: var(--secondary-red); border-color: var(--secondary-red);
-            color: white; transform: rotate(90deg);
-        }
-
-        .modal-card textarea { min-height: 220px; margin-bottom: 30px; font-size: 1.05rem; border-color: rgba(255,255,255,0.15); }
-        .modal-actions { display: flex; justify-content: flex-end; gap: 15px; }
-
-        /* Toast Notification */
+        /* Toast */
         .toast {
-            position: fixed; bottom: 40px; left: 50%;
-            transform: translateX(-50%) translateY(100px); background: var(--accent-green);
-            color: white; padding: 16px 32px; border-radius: var(--radius-btn);
-            font-weight: 700; box-shadow: 0 10px 30px rgba(72, 161, 17, 0.2);
-            opacity: 0; transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            z-index: 3000; display: flex; align-items: center; gap: 12px;
+            position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 50px);
+            background: var(--accent-green); color: white; padding: 12px 24px;
+            border-radius: var(--radius-btn); font-weight: 600; font-size: 0.9rem;
+            opacity: 0; transition: all 0.4s; z-index: 3000; display: flex; align-items: center; gap: 10px;
+            pointer-events: none;
         }
+        .toast.show { transform: translate(-50%, 0); opacity: 1; }
 
-        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .form-grid, .combo-wrapper { grid-template-columns: 1fr; }
-            .sticky-ribbon { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
-            .output-actions { width: 100%; justify-content: center; }
-            .form-section { padding: 30px 20px; border-radius: 20px; }
-            .modal-card { padding: 30px 20px; border-radius: 20px; }
-            .combo-wrapper select, .combo-wrapper button.input-trigger { height: 50px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .sticky-ribbon { flex-direction: column; gap: 15px; padding: 15px; }
+            .output-actions { justify-content: center; width: 100%; }
+            .combo-wrapper { flex-direction: column; }
+            .input-trigger { width: 100%; height: 40px; }
         }
     </style>
 </head>
@@ -373,19 +302,23 @@
             ✨ Prompt<span>AI</span>
         </div>
         <div class="output-actions">
-            <button class="btn btn-secondary" onclick="copyToClipboard()">Copy Text</button>
-            <button class="btn btn-primary" onclick="downloadTxt()">Export .txt</button>
+            <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImport(event)">
+            <button class="btn btn-action" onclick="document.getElementById('importFile').click()">📥 Import JSON</button>
+            <button class="btn btn-action" onclick="exportJSON()">📤 Export JSON</button>
+            <button class="btn btn-secondary" onclick="copyToClipboard()">📋 Copy</button>
+            <button class="btn btn-primary" onclick="downloadTxt()">💾 Export .txt</button>
         </div>
     </div>
 
     <div class="header">
         <h1>Builder <span>Infografis</span></h1>
-        <p>Lengkapi parameter desain. Output otomatis tergenerate di panel bawah (lipat/buka).</p>
+        <p>Lengkapi parameter desain. Output tersinkronisasi otomatis di panel bawah.</p>
     </div>
 
     <div class="container">
-        <div id="mainForm" style="display:flex; flex-direction: column; gap: 35px;">
+        <div id="mainForm" style="display:flex; flex-direction: column; gap: 24px;">
             
+            <!-- SECTION 1 -->
             <div class="form-section">
                 <h3 class="section-title">📋 1. Informasi Dasar</h3>
                 <div class="form-grid">
@@ -394,12 +327,10 @@
                         <div class="combo-wrapper">
                             <select id="q1" onchange="clearComboInput('q1_other')">
                                 <option value="">-- Pilih Jenis --</option>
-                                <option value="Infografis Edukasi">Infografis Edukasi (Penjelasan materi/konsep)</option>
-                                <option value="Infografis Data/Statistik">Infografis Data/Statistik (Menyajikan angka)</option>
-                                <option value="Poster Promosi">Poster Promosi (Jualan / Event)</option>
-                                <option value="Thumbnail Video">Thumbnail Video (Cover Youtube, dll)</option>
-                                <option value="Cover Konten Slide">Cover Konten Slide (Judul pembuka)</option>
-                                <option value="Brosur Digital">Brosur Digital (Menu / Selebaran)</option>
+                                <option value="Infografis Edukasi">Infografis Edukasi</option>
+                                <option value="Infografis Data/Statistik">Infografis Data/Statistik</option>
+                                <option value="Poster Promosi">Poster Promosi</option>
+                                <option value="Thumbnail Video">Thumbnail Video</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
                             <button class="input-trigger" id="btn_q1" onclick="openModal('q1', 'Jenis Desain')">+ Input Manual</button>
@@ -411,12 +342,9 @@
                         <div class="combo-wrapper">
                             <select id="q2" onchange="clearComboInput('q2_other')">
                                 <option value="">-- Pilih Tujuan --</option>
-                                <option value="Edukasi / Menjelaskan">Edukasi / Menjelaskan (Memberikan fakta & ilmu)</option>
-                                <option value="Menarik Perhatian (Hook)">Menarik Perhatian / Hook (Bikin penasaran di awal)</option>
-                                <option value="Promosi Produk / Jualan">Promosi Produk / Jualan (Menawarkan sesuatu)</option>
-                                <option value="Meningkatkan Awareness">Meningkatkan Awareness (Branding merek)</option>
-                                <option value="Menyajikan Laporan Data">Menyajikan Laporan Data (Grafik / Chart)</option>
-                                <option value="Hiburan / Komedi">Hiburan / Komedi (Meme / Lucu-lucuan)</option>
+                                <option value="Edukasi / Menjelaskan">Edukasi / Menjelaskan</option>
+                                <option value="Menarik Perhatian (Hook)">Menarik Perhatian (Hook)</option>
+                                <option value="Promosi Produk / Jualan">Promosi Produk / Jualan</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
                             <button class="input-trigger" id="btn_q2" onclick="openModal('q2', 'Tujuan Utama')">+ Input Manual</button>
@@ -430,9 +358,7 @@
                                 <option value="">-- Pilih Audiens --</option>
                                 <option value="Anak-anak">Anak-anak</option>
                                 <option value="Remaja / Gen Z">Remaja / Gen Z</option>
-                                <option value="Mahasiswa">Mahasiswa</option>
                                 <option value="Profesional / Pekerja">Profesional / Pekerja</option>
-                                <option value="Orang Tua">Orang Tua</option>
                                 <option value="Umum (Semua Umur)">Umum (Semua Umur)</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
@@ -447,12 +373,9 @@
 
                     <div class="form-group full-width">
                         <label>5. Pesan Inti (Core Message)
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Kesimpulan kuat atau ajakan utama yang membekas di pikiran audiens setelah melihat desain Anda. (Contoh: Menabung sejak dini itu menguntungkan).</span>
-                            </span>
+                            <span class="info-icon" onclick="toggleInfo(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><span class="info-tooltip">Kesimpulan yang membekas di pikiran audiens.</span></span>
                         </label>
-                        <input type="text" id="q5" placeholder="Contoh: Menabung sejak dini itu mudah dan menguntungkan...">
+                        <input type="text" id="q5" placeholder="Contoh: Menabung sejak dini itu menguntungkan...">
                     </div>
 
                     <div class="form-group">
@@ -461,10 +384,8 @@
                             <select id="q6" onchange="clearComboInput('q6_other')">
                                 <option value="">-- Pilih Gaya --</option>
                                 <option value="Formal & Serius">Formal & Serius</option>
-                                <option value="Semi-Formal">Semi-Formal</option>
                                 <option value="Santai / Gaul">Santai / Gaul</option>
                                 <option value="Persuasif / Mengajak">Persuasif / Mengajak</option>
-                                <option value="Emosional / Menyentuh">Emosional / Menyentuh</option>
                                 <option value="Humoris / Lucu">Humoris / Lucu</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
@@ -474,39 +395,28 @@
                 </div>
             </div>
 
+            <!-- SECTION 2 -->
             <div class="form-section">
                 <h3 class="section-title">🎨 2. Visual Direction</h3>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>7. Visual Style Utama
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Gaya seni gambar utamanya. Misal: 'Flat Design' (vektor 2D datar tanpa shadow nyata), 'Isometric' (3D miring).</span>
-                            </span>
-                        </label>
+                        <label>7. Visual Style Utama</label>
                         <div class="combo-wrapper">
                             <select id="q7" onchange="clearComboInput('q7_other')">
                                 <option value="">-- Pilih Style --</option>
-                                <option value="Flat Design (2D)">Flat Design (Vektor 2D datar tanpa efek timbul)</option>
-                                <option value="Cartoon 3D">Cartoon 3D (Animasi ala Pixar/3D)</option>
-                                <option value="Isometric (3D Sudut)">Isometric (3D dari sudut atas menyamping)</option>
-                                <option value="Hand-Drawn (Sketsa)">Hand-Drawn (Gaya sketsa atau goresan tangan)</option>
-                                <option value="Pixel Art (Retro 8-bit)">Pixel Art (Grafis kotak-kotak ala game jadul)</option>
-                                <option value="Corporate Minimalis">Corporate Minimalis (Bersih, rapi, profesional)</option>
+                                <option value="Flat Design (2D)">Flat Design (2D)</option>
+                                <option value="Cartoon 3D">Cartoon 3D</option>
+                                <option value="Isometric (3D Sudut)">Isometric (3D Sudut)</option>
+                                <option value="Corporate Minimalis">Corporate Minimalis</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
-                            <button class="input-trigger" id="btn_q7" onclick="openModal('q7', 'Visual Style Utama')">+ Input Manual</button>
+                            <button class="input-trigger" id="btn_q7" onclick="openModal('q7', 'Style Utama')">+ Input Manual</button>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>8. Visual Style Pendukung
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Efek filter tambahan pada gambar (Opsional). Contoh: Grunge, Vintage, Cyberpunk.</span>
-                            </span>
-                        </label>
-                        <input type="text" id="q8" placeholder="Opsional...">
+                        <label>8. Visual Style Pendukung</label>
+                        <input type="text" id="q8" placeholder="Opsional (Cth: Grunge, Cyberpunk)...">
                     </div>
 
                     <div class="form-group">
@@ -514,12 +424,10 @@
                         <div class="combo-wrapper">
                             <select id="q9" onchange="clearComboInput('q9_other')">
                                 <option value="">-- Pilih Mood --</option>
-                                <option value="Modern & Bersih">Modern & Bersih (Clear & rapi)</option>
-                                <option value="Futuristik (Teknologi)">Futuristik (Kesan canggih & teknologi)</option>
-                                <option value="Playful (Ceria)">Playful (Ceria, penuh warna, asyik)</option>
-                                <option value="Elegan / Mewah">Elegan / Mewah (Eksklusif, premium)</option>
-                                <option value="Vintage / Retro jadul">Vintage (Klasik atau bernuansa lawas)</option>
-                                <option value="Dark / Misterius">Dark / Misterius (Gelap & intens)</option>
+                                <option value="Modern & Bersih">Modern & Bersih</option>
+                                <option value="Futuristik (Teknologi)">Futuristik (Teknologi)</option>
+                                <option value="Playful (Ceria)">Playful (Ceria)</option>
+                                <option value="Dark / Misterius">Dark / Misterius</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
                             <button class="input-trigger" id="btn_q9" onclick="openModal('q9', 'Mood Visual')">+ Input Manual</button>
@@ -533,17 +441,15 @@
 
                     <div class="form-group">
                         <label>11. Warna yang Dihindari</label>
-                        <input type="text" id="q11" placeholder="Contoh: Merah terang atau warna neon">
+                        <input type="text" id="q11" placeholder="Contoh: Merah terang">
                     </div>
 
                     <div class="form-group">
                         <label>12. Tingkat Detail Visual</label>
                         <select id="q12">
                             <option value="">-- Pilih Detail --</option>
-                            <option value="Sangat Minimal (Banyak ruang kosong)">Sangat Minimal (Banyak ruang kosong)</option>
                             <option value="Minimalis & Bersih">Minimalis & Bersih</option>
                             <option value="Sedang (Seimbang)">Sedang (Seimbang)</option>
-                            <option value="Tinggi (Cukup Ramai)">Tinggi (Cukup Ramai)</option>
                             <option value="Sangat Detail (Rumit & Nyata)">Sangat Detail (Rumit & Nyata)</option>
                             <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                         </select>
@@ -551,6 +457,7 @@
                 </div>
             </div>
 
+            <!-- SECTION 3 -->
             <div class="form-section">
                 <h3 class="section-title">📝 3. Struktur Konten</h3>
                 <div class="form-grid">
@@ -565,69 +472,50 @@
                     </div>
 
                     <div class="form-group">
-                        <label>16. Format Penyajian Konten
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Cara visual untuk membagi/menyajikan inti informasi pada infografis Anda.</span>
-                            </span>
-                        </label>
+                        <label>16. Format Penyajian Konten</label>
                         <select id="q16">
                             <option value="">-- Pilih Format --</option>
-                            <option value="Bullet Points">Bullet Points (Poin-poin dengan icon titik)</option>
-                            <option value="Timeline">Timeline (Alur waktu / urutan peristiwa)</option>
-                            <option value="Comparison">Comparison (Perbandingan A vs B bersebelahan)</option>
-                            <option value="Flowchart">Flowchart (Bagan alur dengan panah)</option>
-                            <option value="Statistik">Statistik (Menonjolkan ukuran persentase angka)</option>
-                            <option value="Mindmap">Mindmap (Jaringan ide terhubung dari tengah)</option>
+                            <option value="Bullet Points">Bullet Points</option>
+                            <option value="Timeline">Timeline</option>
+                            <option value="Comparison">Comparison</option>
+                            <option value="Flowchart">Flowchart</option>
                             <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label>17. Call To Action (CTA)
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Kalimat ajakan bertindak (marketing) di bagian paling bawah/akhir visual desain.</span>
-                            </span>
-                        </label>
-                        <input type="text" id="q17" placeholder="Cth: Beli Sekarang, Geser Kiri, Kunjungi Website...">
+                        <label>17. Call To Action (CTA)</label>
+                        <input type="text" id="q17" placeholder="Cth: Beli Sekarang...">
                     </div>
 
                     <div class="form-group full-width">
                         <label>18. Footer / Catatan</label>
-                        <input type="text" id="q18" placeholder="Teks kecil di bawah (sumber data, kontak, dll)...">
+                        <input type="text" id="q18" placeholder="Teks kecil di bawah...">
                     </div>
 
                     <div class="form-group full-width">
-                        <label>15. Isi Utama (Body Content)
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Teks materi utama Anda. Gunakan format poin-poin/rangkuman singkat agar desain tidak penuh dengan teks.</span>
-                            </span>
-                        </label>
-                        <textarea id="q15" placeholder="1. Poin pertama: ...&#10;2. Poin kedua: ...&#10;3. Poin ketiga: ..."></textarea>
+                        <label>15. Isi Utama (Body Content)</label>
+                        <textarea id="q15" placeholder="1. Poin pertama...\n2. Poin kedua..."></textarea>
                     </div>
                 </div>
             </div>
 
+            <!-- SECTION 4 -->
             <div class="form-section">
                 <h3 class="section-title">🖼️ 4. Elemen Visual</h3>
                 <div class="form-grid">
                     <div class="form-group full-width">
-                        <label>19. Objek Utama yang Harus Muncul</label>
-                        <input type="text" id="q19" placeholder="Contoh: Ilustrasi dokter sedang memegang tablet...">
+                        <label>19. Objek Utama</label>
+                        <input type="text" id="q19" placeholder="Contoh: Ilustrasi dokter memegang tablet...">
                     </div>
-
                     <div class="form-group full-width">
                         <label>20. Objek Pendukung</label>
-                        <input type="text" id="q20" placeholder="Contoh: Tanaman hias kecil, laptop di meja...">
+                        <input type="text" id="q20" placeholder="Contoh: Tanaman hias kecil...">
                     </div>
-
                     <div class="form-group">
-                        <label>21. Ikon yang Diinginkan</label>
-                        <input type="text" id="q21" placeholder="Contoh: Ceklis hijau, panah melengkung...">
+                        <label>21. Ikon</label>
+                        <input type="text" id="q21" placeholder="Contoh: Ceklis hijau...">
                     </div>
-
                     <div class="form-group">
                         <label>22. Background</label>
                         <div class="combo-wrapper">
@@ -635,10 +523,7 @@
                                 <option value="">-- Pilih Background --</option>
                                 <option value="Putih / Terang Bersih">Putih / Terang Bersih</option>
                                 <option value="Gelap (Dark Mode)">Gelap (Dark Mode)</option>
-                                <option value="Gradient (Transisi warna halus)">Gradient (Transisi warna halus)</option>
-                                <option value="Pattern (Pola berulang tipis)">Pattern (Pola berulang tipis)</option>
-                                <option value="Tekstur (Kertas/Kanvas)">Tekstur (Kertas/Kanvas)</option>
-                                <option value="Pemandangan / Ruangan Blur">Pemandangan / Ruangan Blur</option>
+                                <option value="Gradient (Transisi warna halus)">Gradient</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
                             <button class="input-trigger" id="btn_q22" onclick="openModal('q22', 'Background')">+ Input Manual</button>
@@ -647,77 +532,51 @@
                 </div>
             </div>
 
+            <!-- SECTION 5 -->
             <div class="form-section">
                 <h3 class="section-title">☪️ 5. Aturan Visual Syariah</h3>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>25a. Aturan Manusia
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Batasan visual dalam menggambar makhluk bernyawa (manusia) untuk desain kaidah syariah.</span>
-                            </span>
-                        </label>
+                        <label>25a. Aturan Manusia</label>
                         <select id="q25_manusia" onchange="toggleNecklessFace()">
                             <option value="">-- Pilih --</option>
                             <option value="Tidak Ada Manusia (Aman)">Tidak Ada Manusia (Aman)</option>
-                            <option value="Faceless (Tanpa mata/hidung/mulut)">Faceless (Tanpa mata/hidung/mulut)</option>
-                            <option value="Headless (Tanpa bentuk kepala)">Headless (Tanpa bentuk kepala)</option>
-                            <option value="Neckless (Kepala terputus dari leher)">Neckless (Kepala terputus dari leher)</option>
-                            <option value="Siluet (Hanya bayangan hitam)">Siluet (Hanya bayangan hitam)</option>
-                            <option value="Tampak Belakang Saja">Tampak Belakang Saja</option>
+                            <option value="Faceless (Tanpa mata/hidung/mulut)">Faceless</option>
+                            <option value="Neckless (Kepala terputus dari leher)">Neckless</option>
+                            <option value="Siluet (Hanya bayangan hitam)">Siluet</option>
                             <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                         </select>
                     </div>
-
                     <div class="form-group" id="q25_manusia_wajah_group" style="display:none;">
-                        <label>Detail Wajah (Khusus Neckless)
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Pilih kondisi wajah leher terputus.</span>
-                            </span>
-                        </label>
+                        <label>Detail Wajah (Khusus Neckless)</label>
                         <select id="q25_manusia_wajah" onchange="generateOutput()">
-                            <option value="Faceless (Tanpa Wajah)">Faceless (Tanpa Wajah)</option>
-                            <option value="Non-Faceless (Wajah Normal)">Non-Faceless (Wajah Normal)</option>
+                            <option value="Faceless (Tanpa Wajah)">Faceless</option>
+                            <option value="Non-Faceless (Wajah Normal)">Non-Faceless</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label>25b. Aturan Hewan
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Batasan untuk penggambaran objek hewan/satwa hidup.</span>
-                            </span>
-                        </label>
+                        <label>25b. Aturan Hewan</label>
                         <select id="q25_hewan">
                             <option value="">-- Pilih --</option>
                             <option value="Tidak Ada Hewan (Aman)">Tidak Ada Hewan (Aman)</option>
-                            <option value="Faceless (Tanpa Wajah)">Faceless (Tanpa Wajah)</option>
-                            <option value="Siluet (Bayangan Hitam)">Siluet (Bayangan Hitam)</option>
-                            <option value="Tampak Belakang">Tampak Belakang</option>
-                            <option value="Abstrak / Geometris">Abstrak / Geometris</option>
+                            <option value="Faceless (Tanpa Wajah)">Faceless</option>
                             <option value="Bebas (Full Detail)">Bebas (Full Detail)</option>
                             <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label>25c. Aturan Benda Universe
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Menentukan apakah benda mati (tumbuhan, awan, matahari, dll) boleh memiliki wajah (mata/mulut).</span>
-                            </span>
-                        </label>
+                        <label>25c. Aturan Benda Universe</label>
                         <select id="q25_universe">
                             <option value="">-- Pilih --</option>
-                            <option value="Off (Benda mati normal, tanpa wajah)">Off (Benda mati normal, tanpa wajah)</option>
-                            <option value="On (Benda mati boleh punya mata/mulut)">On (Benda mati boleh punya mata/mulut)</option>
+                            <option value="Off (Benda mati normal)">Off (Normal)</option>
+                            <option value="On (Boleh punya wajah)">On (Boleh punya wajah)</option>
                             <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                         </select>
                     </div>
                 </div>
             </div>
 
+            <!-- SECTION 6 -->
             <div class="form-section">
                 <h3 class="section-title">⚙️ 6. Teknis Desain</h3>
                 <div class="form-grid">
@@ -726,47 +585,36 @@
                         <div class="combo-wrapper">
                             <select id="q26" onchange="clearComboInput('q26_other')">
                                 <option value="">-- Pilih Rasio --</option>
-                                <option value="1:1 (Persegi / IG Feed)">1:1 (Persegi / IG Feed)</option>
-                                <option value="4:5 (Tegak Sedang / IG Portrait)">4:5 (Tegak Sedang / IG Portrait)</option>
-                                <option value="16:9 (Mendatar / Layar / Youtube)">16:9 (Mendatar / Layar / Youtube)</option>
-                                <option value="9:16 (Tegak Panjang / Story / Reels)">9:16 (Tegak Panjang / Story / Reels)</option>
-                                <option value="3:4 (Standard Foto)">3:4 (Standard Foto)</option>
-                                <option value="21:9 (Ultrawide Banner)">21:9 (Ultrawide Banner)</option>
+                                <option value="1:1 (Persegi)">1:1 (Persegi)</option>
+                                <option value="4:5 (IG Portrait)">4:5 (IG Portrait)</option>
+                                <option value="16:9 (Youtube)">16:9 (Youtube)</option>
+                                <option value="9:16 (Reels/Story)">9:16 (Reels/Story)</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
-                            <button class="input-trigger" id="btn_q26" onclick="openModal('q26', 'Rasio Ukuran')">+ Input Manual</button>
+                            <button class="input-trigger" id="btn_q26" onclick="openModal('q26', 'Rasio')">+ Input Manual</button>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label>27. Prioritas Fokus Visual
-                            <span class="info-icon" onclick="toggleInfo(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                <span class="info-tooltip">Elemen apa yang ukurannya ingin dibuat paling besar, mencolok, dan menjadi pusat perhatian di kanvas.</span>
-                            </span>
-                        </label>
+                        <label>27. Prioritas Fokus Visual</label>
                         <div class="combo-wrapper">
                             <select id="q27" onchange="clearComboInput('q27_other')">
                                 <option value="">-- Pilih Prioritas --</option>
                                 <option value="Judul / Teks Utama">Judul / Teks Utama</option>
-                                <option value="Data / Angka Statistik Besar">Data / Angka Statistik Besar</option>
                                 <option value="Gambar Ilustrasi">Gambar Ilustrasi</option>
-                                <option value="Tombol Aksi (CTA)">Tombol Aksi (CTA)</option>
-                                <option value="Foto Produk">Foto Produk</option>
-                                <option value="Logo / Elemen Branding">Logo / Elemen Branding</option>
+                                <option value="Data / Angka Statistik">Data / Angka Statistik</option>
                                 <option value="Biarkan AI Menentukan">Biarkan AI Menentukan</option>
                             </select>
-                            <button class="input-trigger" id="btn_q27" onclick="openModal('q27', 'Prioritas Fokus Visual')">+ Input Manual</button>
+                            <button class="input-trigger" id="btn_q27" onclick="openModal('q27', 'Prioritas')">+ Input Manual</button>
                         </div>
                     </div>
-
                     <div class="form-group full-width">
                         <label>28. Catatan Tambahan (Instruksi AI)</label>
-                        <textarea id="q31" placeholder="Tuliskan instruksi teknis tambahan atau hal yang dilarang untuk AI di sini..."></textarea>
+                        <textarea id="q31" placeholder="Instruksi spesifik..."></textarea>
                     </div>
                 </div>
             </div>
 
+            <!-- SECTION 7 -->
             <div class="form-section">
                 <h3 class="section-title">💧 7. Watermark / Branding</h3>
                 <div class="form-grid">
@@ -778,89 +626,68 @@
                         </select>
                     </div>
                     
-                    <div class="form-group full-width" id="watermark_options_group" style="display:none; gap: 20px;">
-                        <div>
-                            <label style="margin-bottom: 12px; display: block; color: var(--secondary-blue);">Jenis Watermark yang ingin ditampilkan (Bisa pilih multi):</label>
-                            <div style="display:flex; gap: 25px; flex-wrap: wrap;">
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" id="wm_sosmed_cb" class="custom-cb" onchange="toggleWatermarkType()"> Sosial Media</label>
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" id="wm_playlist_cb" class="custom-cb" onchange="toggleWatermarkType()"> Playlist</label>
-                            </div>
+                    <div class="form-group full-width" id="watermark_options_group" style="display:none; gap: 15px;">
+                        <label style="color: var(--secondary-blue);">Pilih Tipe Watermark:</label>
+                        <div style="display:flex; gap: 20px; flex-wrap: wrap;">
+                            <label style="cursor:pointer;"><input type="checkbox" id="wm_sosmed_cb" class="custom-cb" onchange="toggleWatermarkType()"> Sosmed</label>
+                            <label style="cursor:pointer;"><input type="checkbox" id="wm_playlist_cb" class="custom-cb" onchange="toggleWatermarkType()"> Playlist</label>
                         </div>
                     </div>
 
-                    <!-- Pilihan Sosial Media -->
-                    <div class="form-group full-width" id="watermark_sosmed_detail" style="display:none; flex-direction:column; gap:20px; background: var(--input-bg); padding: 25px; border-radius: var(--radius-input); border: 1px dashed rgba(3, 174, 210, 0.4);">
+                    <div class="form-group full-width" id="watermark_sosmed_detail" style="display:none; gap:15px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-input); border: 1px dashed rgba(255,255,255,0.2);">
                         <div>
-                            <label>Pilih Platform Sosial Media</label>
-                            <div style="display:flex; flex-wrap:wrap; gap: 25px; margin-top:12px;">
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" value="Instagram" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> Instagram</label>
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" value="Facebook" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> Facebook</label>
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" value="TikTok" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> TikTok</label>
-                                <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight: 500;"><input type="checkbox" value="YouTube" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> YouTube</label>
+                            <label>Platform Sosial Media</label>
+                            <div style="display:flex; flex-wrap:wrap; gap: 15px; margin-top:8px;">
+                                <label><input type="checkbox" value="IG" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> IG</label>
+                                <label><input type="checkbox" value="FB" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> FB</label>
+                                <label><input type="checkbox" value="TikTok" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> TikTok</label>
+                                <label><input type="checkbox" value="YT" class="sosmed-platform-cb custom-cb" onchange="generateOutput()"> YT</label>
                             </div>
                         </div>
-                        <div>
-                            <label>Nama Akun (Sosmed)</label>
-                            <input type="text" id="q29_account" placeholder="Contoh: @akun_saya" oninput="generateOutput()">
-                        </div>
+                        <input type="text" id="q29_account" placeholder="Nama Akun: @akun_saya" oninput="generateOutput()">
                     </div>
 
-                    <!-- Pilihan Playlist -->
-                    <div class="form-group full-width" id="watermark_playlist_detail" style="display:none; background: var(--input-bg); padding: 25px; border-radius: var(--radius-input); border: 1px dashed rgba(3, 174, 210, 0.4);">
+                    <div class="form-group full-width" id="watermark_playlist_detail" style="display:none; background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-input); border: 1px dashed rgba(255,255,255,0.2);">
                         <label>Nama Playlist</label>
                         <input type="text" id="q29_playlist" placeholder="Contoh: Ngaji Bareng" oninput="generateOutput()">
                     </div>
                     
-                    <!-- Pilihan Kustom Watermark -->
                     <div class="form-group full-width" id="watermark_custom_group" style="display:none;">
-                        <button class="btn btn-secondary" id="btn_tambah_watermark" style="width: fit-content; padding: 10px 20px;" onclick="toggleCustomWatermark()">+ Tambah Watermark Kustom</button>
-                        
-                        <div id="watermark_custom_input" style="display:none; margin-top: 15px; background: var(--input-bg); padding: 25px; border-radius: var(--radius-input); border: 1px dashed rgba(3, 174, 210, 0.4);">
-                            <label>Penjelasan Watermark Kustom
-                                <span class="info-icon" onclick="toggleInfo(this)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                    <span class="info-tooltip">Jelaskan watermark apa yang ingin ditambah (Cth: Logo perusahaan di pojok kiri atas).</span>
-                                </span>
-                            </label>
-                            <textarea id="q29_custom" placeholder="Jelaskan watermark lain yang Anda inginkan secara spesifik..." oninput="generateOutput()" style="min-height: 100px;"></textarea>
-                        </div>
+                        <textarea id="q29_custom" placeholder="Ketik jika ada watermark kustom lainnya..." oninput="generateOutput()"></textarea>
                     </div>
                 </div>
             </div>
 
         </div>
 
+        <!-- OUTPUT PANEL -->
         <div class="output-panel closed" id="outputSection">
             <div class="output-header" onclick="toggleOutput()">
                 <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     Lihat Hasil Prompt
                 </h2>
-                <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
-            
             <div class="output-body">
-                <div class="output-content">
+                <div class="code-container">
                     <div class="code-box" id="outputResult">Mulai mengisi form di atas untuk melihat racikan prompt Anda...</div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Input Manual -->
     <div class="modal-overlay" id="customInputModal">
         <div class="modal-card">
             <div class="modal-header">
                 <h3 id="modalTitle">Input Kustom</h3>
-                <button class="modal-close" onclick="closeModal()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
+                <button class="btn-action" style="width: 35px; height: 35px; border-radius: 50%; padding: 0;" onclick="closeModal()">✕</button>
             </div>
-            
             <textarea id="modalTextarea" placeholder="Ketikkan spesifikasi kustom secara detail..."></textarea>
-            
             <div class="modal-actions">
                 <button class="btn btn-secondary" onclick="closeModal()">Batal</button>
-                <button class="btn btn-primary" onclick="saveModal()">Simpan Pilihan</button>
+                <button class="btn btn-primary" onclick="saveModal()">Simpan</button>
             </div>
         </div>
     </div>
@@ -901,7 +728,6 @@
             { id: 'q31', label: '28. Catatan Instruksi AI', isCombo: false }
         ];
 
-        // Toggling Tooltips untuk perangkat layar sentuh
         function toggleInfo(element) {
             document.querySelectorAll('.info-icon').forEach(icon => {
                 if (icon !== element) icon.classList.remove('active');
@@ -909,16 +735,14 @@
             element.classList.toggle('active');
         }
 
-        // FUNGSI MODAL
         function openModal(key, title) {
             activeInputKey = key;
             const modal = document.getElementById('customInputModal');
             const textarea = document.getElementById('modalTextarea');
-            
             document.getElementById('modalTitle').innerText = "Input Manual: " + title;
             textarea.value = customInputsData[key] || '';
             modal.classList.add('active');
-            setTimeout(() => textarea.focus(), 200); 
+            setTimeout(() => textarea.focus(), 100); 
         }
 
         function closeModal() {
@@ -928,15 +752,14 @@
 
         function saveModal() {
             if (!activeInputKey) return;
-            const textarea = document.getElementById('modalTextarea');
+            const val = document.getElementById('modalTextarea').value.trim();
             const btn = document.getElementById('btn_' + activeInputKey);
             const selectDropdown = document.getElementById(activeInputKey);
-            const val = textarea.value.trim();
             
             if (val) {
                 customInputsData[activeInputKey] = val;
                 btn.classList.add('has-value');
-                btn.innerText = "✓ Input Tersimpan";
+                btn.innerText = "✓ Tersimpan";
                 if(selectDropdown) selectDropdown.value = '';
             } else {
                 delete customInputsData[activeInputKey];
@@ -947,7 +770,7 @@
             closeModal();
         }
 
-        function clearComboInput(dummy_param) {
+        function clearComboInput() {
             const activeElem = document.activeElement;
             if(activeElem && activeElem.tagName === 'SELECT') {
                 const key = activeElem.id;
@@ -961,27 +784,21 @@
             generateOutput();
         }
 
-        // FUNGSI WATERMARK
         function toggleWatermark() {
             const toggle = document.getElementById('q29_toggle').value;
-            const optionsGroup = document.getElementById('watermark_options_group');
-            const customGroup = document.getElementById('watermark_custom_group');
+            const opts = document.getElementById('watermark_options_group');
+            const custom = document.getElementById('watermark_custom_group');
             
             if (toggle === 'Ya') {
-                optionsGroup.style.display = 'flex';
-                optionsGroup.style.flexDirection = 'column';
-                customGroup.style.display = 'block';
+                opts.style.display = 'flex'; opts.style.flexDirection = 'column'; custom.style.display = 'block';
                 toggleWatermarkType(); 
             } else {
-                optionsGroup.style.display = 'none';
-                customGroup.style.display = 'none';
+                opts.style.display = 'none'; custom.style.display = 'none';
                 document.getElementById('watermark_sosmed_detail').style.display = 'none';
                 document.getElementById('watermark_playlist_detail').style.display = 'none';
-                
                 document.getElementById('wm_sosmed_cb').checked = false;
                 document.getElementById('wm_playlist_cb').checked = false;
                 document.getElementById('q29_custom').value = '';
-                document.getElementById('watermark_custom_input').style.display = 'none';
             }
             generateOutput();
         }
@@ -989,37 +806,21 @@
         function toggleWatermarkType() {
             const isSosmed = document.getElementById('wm_sosmed_cb').checked;
             const isPlaylist = document.getElementById('wm_playlist_cb').checked;
-            
             document.getElementById('watermark_sosmed_detail').style.display = isSosmed ? 'flex' : 'none';
+            document.getElementById('watermark_sosmed_detail').style.flexDirection = 'column';
             document.getElementById('watermark_playlist_detail').style.display = isPlaylist ? 'block' : 'none';
             generateOutput();
-        }
-
-        function toggleCustomWatermark() {
-            const customInput = document.getElementById('watermark_custom_input');
-            if(customInput.style.display === 'none' || customInput.style.display === '') {
-                customInput.style.display = 'block';
-            } else {
-                customInput.style.display = 'none';
-                document.getElementById('q29_custom').value = ''; 
-                generateOutput();
-            }
         }
 
         function toggleNecklessFace() {
             const select = document.getElementById('q25_manusia').value;
             const group = document.getElementById('q25_manusia_wajah_group');
-            if (select === 'Neckless (Kepala terputus dari leher)') {
-                group.style.display = 'flex';
-            } else {
-                group.style.display = 'none';
-            }
+            group.style.display = (select === 'Neckless (Kepala terputus dari leher)') ? 'flex' : 'none';
             generateOutput();
         }
 
         function toggleOutput() {
-            const panel = document.getElementById('outputSection');
-            panel.classList.toggle('closed');
+            document.getElementById('outputSection').classList.toggle('closed');
         }
 
         function generateOutput() {
@@ -1028,33 +829,31 @@
             outputText += '=========================================\n';
             
             let hasInput = false;
-            let isiUtamaText = '';
-
-            const q15Element = document.getElementById('q15');
-            if (q15Element) {
-                isiUtamaText = q15Element.value.trim();
-                if (isiUtamaText !== '') hasInput = true;
-            }
+            let isiUtamaText = (document.getElementById('q15')?.value || '').trim();
+            if (isiUtamaText) hasInput = true;
 
             questionsMap.forEach(q => {
-                const element = document.getElementById(q.id);
-                if (!element) return;
+                const el = document.getElementById(q.id);
+                if (!el) return;
+                
+                let finalValue = el.value.trim();
 
-                let finalValue = element.value.trim();
+                // Cek if explicitly selected "Biarkan AI Menentukan"
+                let isExplicitAI = (finalValue === "Biarkan AI Menentukan");
 
-                if (q.isCombo) {
-                    if (customInputsData[q.id]) {
-                        finalValue = customInputsData[q.id];
-                    }
+                // Cek Custom Input
+                if (q.isCombo && customInputsData[q.id]) {
+                    finalValue = customInputsData[q.id];
+                    isExplicitAI = false;
                 }
                 
                 if (q.id === 'q25_manusia' && finalValue === 'Neckless (Kepala terputus dari leher)') {
-                    const detailWajah = document.getElementById('q25_manusia_wajah').value;
-                    finalValue += ` dengan detail: ${detailWajah}`;
+                    finalValue += ` dengan detail: ${document.getElementById('q25_manusia_wajah').value}`;
                 }
 
+                // Logika: kosong -> (kosong), kecuali eksplisit pilih AI
                 if (finalValue === '') {
-                    finalValue = 'Biarkan AI Menentukan';
+                    finalValue = '(kosong)';
                 } else {
                     hasInput = true;
                 }
@@ -1062,12 +861,11 @@
                 outputText += `- ${q.label}: ${finalValue}\n`;
             });
 
-            // Proses Watermark
+            // Watermark Logic
             const wmToggle = document.getElementById('q29_toggle');
             if (wmToggle && wmToggle.value === 'Ya') {
                 hasInput = true;
                 let wmOutputs = [];
-                
                 const isSosmed = document.getElementById('wm_sosmed_cb').checked;
                 const isPlaylist = document.getElementById('wm_playlist_cb').checked;
                 const customWm = document.getElementById('q29_custom').value.trim();
@@ -1075,115 +873,146 @@
                 if (isSosmed) {
                     const cbs = document.querySelectorAll('.sosmed-platform-cb:checked');
                     const selected = Array.from(cbs).map(cb => cb.value).join(', ');
-                    const account = document.getElementById('q29_account').value.trim() || 'Biarkan AI Menentukan';
-                    wmOutputs.push(`Tanpa teks tulisan sosmed, HANYA memunculkan icon (${selected || 'Biarkan AI Menentukan'}) berserta nama akun: ${account}`);
+                    const account = document.getElementById('q29_account').value.trim() || '(kosong)';
+                    wmOutputs.push(`Hanya icon sosmed (${selected || '(kosong)'}) & nama akun: ${account}`);
                 }
-                
                 if (isPlaylist) {
-                    const playlist = document.getElementById('q29_playlist').value.trim() || 'Biarkan AI Menentukan';
-                    wmOutputs.push(`Tanpa menuliskan kata "playlist", HANYA memunculkan icon playlist berserta judulnya: ${playlist}`);
+                    const playlist = document.getElementById('q29_playlist').value.trim() || '(kosong)';
+                    wmOutputs.push(`Icon playlist & judul: ${playlist}`);
                 }
-
-                if (customWm) {
-                    wmOutputs.push(`Watermark Kustom: ${customWm}`);
-                }
+                if (customWm) wmOutputs.push(`Watermark Kustom: ${customWm}`);
                 
-                if (wmOutputs.length > 0) {
-                    outputText += `- 29. Watermark:\n  * ${wmOutputs.join('\n  * ')}\n`;
-                } else {
-                    outputText += `- 29. Watermark: Biarkan AI Menentukan\n`;
-                }
+                outputText += wmOutputs.length > 0 ? `- 29. Watermark:\n  * ${wmOutputs.join('\n  * ')}\n` : `- 29. Watermark: (kosong)\n`;
             }
 
-            outputText += '=========================================\n';
-            outputText += '📄 ISI UTAMA (BODY CONTENT)\n';
-            outputText += '-----------------------------------------\n';
-            
-            if (isiUtamaText !== '') {
-                isiUtamaText = isiUtamaText.replace(/\n+/g, '\n');
-                outputText += isiUtamaText + '\n';
-            } else {
-                outputText += 'Biarkan AI Menentukan\n';
-            }
-            
-            outputText += '=========================================\n';
-            outputText += 'Catatan : jangan menciptakan gambar apapun, tanpa diminta, gunakan ini hanya sebagai key acuan.';
+            outputText += '=========================================\n📄 ISI UTAMA (BODY CONTENT)\n-----------------------------------------\n';
+            outputText += (isiUtamaText !== '') ? isiUtamaText.replace(/\n+/g, '\n') + '\n' : '(kosong)\n';
+            outputText += '=========================================\nCatatan: Jangan menciptakan gambar apapun, tanpa diminta, gunakan ini hanya sebagai key acuan.';
 
             const outputDiv = document.getElementById('outputResult');
-            if (hasInput) {
-                outputDiv.textContent = outputText;
-            } else {
-                outputDiv.textContent = "Mulai mengisi form di atas untuk melihat racikan prompt Anda...";
-            }
+            outputDiv.textContent = hasInput ? outputText : "Mulai mengisi form di atas untuk melihat racikan prompt Anda...";
         }
 
-        // Listener
+        // Export/Import JSON
+        function exportJSON() {
+            let data = { inputs: {}, customData: customInputsData, checkboxes: {} };
+            
+            document.querySelectorAll('input[type="text"], input[type="number"], select, textarea').forEach(el => {
+                if (el.id && el.id !== 'outputResult' && el.id !== 'modalTextarea') {
+                    data.inputs[el.id] = el.value;
+                }
+            });
+            document.querySelectorAll('input[type="checkbox"]').forEach(el => {
+                if (el.id) data.checkboxes[el.id] = el.checked;
+                if (el.classList.contains('sosmed-platform-cb')) {
+                    if (!data.checkboxes.sosmedPlatforms) data.checkboxes.sosmedPlatforms = [];
+                    if (el.checked) data.checkboxes.sosmedPlatforms.push(el.value);
+                }
+            });
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Prompt-Data.json';
+            a.click(); URL.revokeObjectURL(url);
+            showToast("Data berhasil di-export ke JSON!");
+        }
+
+        function handleImport(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    
+                    // Restore Custom Inputs
+                    customInputsData = data.customData || {};
+                    Object.keys(customInputsData).forEach(key => {
+                        const btn = document.getElementById('btn_' + key);
+                        if(btn) {
+                            btn.classList.add('has-value');
+                            btn.innerText = "✓ Tersimpan";
+                        }
+                    });
+
+                    // Restore Text/Select
+                    if(data.inputs) {
+                        Object.keys(data.inputs).forEach(key => {
+                            const el = document.getElementById(key);
+                            if(el) el.value = data.inputs[key];
+                        });
+                    }
+
+                    // Restore Checkboxes
+                    if(data.checkboxes) {
+                        Object.keys(data.checkboxes).forEach(key => {
+                            if(key !== 'sosmedPlatforms') {
+                                const el = document.getElementById(key);
+                                if(el) el.checked = data.checkboxes[key];
+                            }
+                        });
+                        if(data.checkboxes.sosmedPlatforms) {
+                            document.querySelectorAll('.sosmed-platform-cb').forEach(cb => {
+                                cb.checked = data.checkboxes.sosmedPlatforms.includes(cb.value);
+                            });
+                        }
+                    }
+
+                    // Trigger UI updates
+                    toggleWatermark();
+                    toggleNecklessFace();
+                    generateOutput();
+                    showToast("Data JSON berhasil dimuat!");
+                } catch(err) {
+                    showToast("Gagal memuat JSON. Format salah.", true);
+                }
+            };
+            reader.readAsText(file);
+            e.target.value = ''; // Reset input
+        }
+
+        // Listeners & Helpers
         document.addEventListener('DOMContentLoaded', () => {
-            const inputs = document.querySelectorAll('input:not([readonly]), select, textarea:not(#modalTextarea)');
-            inputs.forEach(input => {
+            document.querySelectorAll('input:not([readonly]):not([type="file"]), select, textarea:not(#modalTextarea)').forEach(input => {
                 input.addEventListener('input', generateOutput);
                 input.addEventListener('change', generateOutput);
             });
             generateOutput();
         });
 
-        // Hides info tooltips when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', (e) => {
             if(!e.target.closest('.info-icon')) {
                 document.querySelectorAll('.info-icon').forEach(icon => icon.classList.remove('active'));
             }
         });
 
         function copyToClipboard() {
-            const textToCopy = document.getElementById('outputResult').innerText;
-            if(textToCopy.includes("Mulai mengisi form")) return;
-
+            const text = document.getElementById('outputResult').innerText;
+            if(text.includes("Mulai mengisi form")) return;
             const textarea = document.createElement('textarea');
-            textarea.value = textToCopy;
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                showToast("Teks berhasil disalin!");
-            } catch (err) {
-                console.error('Gagal menyalin', err);
-            }
+            textarea.value = text; document.body.appendChild(textarea);
+            textarea.select(); document.execCommand('copy');
             document.body.removeChild(textarea);
-        }
-
-        function showToast(msg, isError = false) {
-            const toast = document.getElementById('toastMsg');
-            toast.innerHTML = isError ? 
-                `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> ${msg}` :
-                `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> ${msg}`;
-            
-            toast.style.background = isError ? 'var(--secondary-red)' : 'var(--accent-green)';
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            showToast("Teks berhasil disalin!");
         }
 
         function downloadTxt() {
-            const textToDownload = document.getElementById('outputResult').innerText;
-            if(textToDownload.includes("Mulai mengisi form")) {
-                showToast("Isi form terlebih dahulu!", true);
-                return;
-            }
-
-            const blob = new Blob([textToDownload], { type: 'text/plain' });
+            const text = document.getElementById('outputResult').innerText;
+            if(text.includes("Mulai mengisi form")) { showToast("Isi form terlebih dahulu!", true); return; }
+            const blob = new Blob([text], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            
-            a.href = url;
-            a.download = 'Prompt-Infografis-AI.txt';
-            document.body.appendChild(a);
-            a.click();
-            
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }, 0);
+            a.href = url; a.download = 'Prompt-Infografis-AI.txt';
+            a.click(); URL.revokeObjectURL(url);
+        }
+
+        function showToast(msg, isErr = false) {
+            const toast = document.getElementById('toastMsg');
+            toast.textContent = msg;
+            toast.style.background = isErr ? 'var(--secondary-red)' : 'var(--accent-green)';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
     </script>
 </body>
